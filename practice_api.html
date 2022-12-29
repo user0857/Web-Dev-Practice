@@ -20,6 +20,7 @@
                 position: absolute;
                 top: 150px;
                 left: 0;
+                min-width: 500px;
                 width: 70%;
                 height: 100%;
             }
@@ -30,6 +31,11 @@
                 left: 70%;
                 width: 30%;
                 height: 100%;
+            }
+
+            #blurredTimeContainter {
+                filter: blur(3px);
+                background-color: #ccc;
             }
 
             .timeContainer{
@@ -57,27 +63,8 @@
 
         </style>
         <script src="./js/practice_api.js"></script>
-        <script type="module" async>
-            import axios from "axios"
+        <script type="module" src="./js_module/getTime.js"></script>
 
-            export function getSunStatus(latitude, longitude){
-                return axios.get("https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today",
-                        {
-                            params: {
-                                lat: latitude,
-                                lon: longitude
-                            }
-                        })
-            }
-
-            getSunStatus(15, 15).then(
-                res => {
-                    console.log(res);
-                }
-            )
-
-            
-        </script>
 
     </head>
     <body>
@@ -89,11 +76,11 @@
                 This is left content.
             </div>
             <div class="bodyContainerRight">
-                <div class="timeContainer">
+                <div class="timeContainer" id="blurredTimeContainter">
                     <div class="timeTitle"> Current Time </div>
                     <div class="timeInfoContainer">
                         <img class="timeIcon" src="./img/sun_rise.png" data-current-icon>
-                        <div class="time"> 00:00:00 </div>
+                        <div class="time"> 12:35:46 </div>
                     </div>
                 </div>
             </div>
