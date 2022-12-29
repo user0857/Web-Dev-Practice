@@ -1,0 +1,54 @@
+html {
+    font-family: sans-serif;
+}
+body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 0 auto;
+    background-image: url(../img/prac_4_bg.jpg);
+}
+h1 {text-align: center;}
+
+#displayField {
+    width: 100%;
+    height: 400px;
+    background-color: rgba(35, 190, 190, 0.5);
+    padding: 5px;
+    margin-top: 20px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+#buttonField {
+    text-align: center;
+}
+
+.row {
+    margin: 0;
+}
+
+.Button {
+    background-color: #353943;
+    border: 1px solid #834426;
+    box-shadow: 5px 5px #c2b7ab;
+    color: #ffffff;
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    text-align: center;
+    transition: all 0.07s ease;
+    display: inline-block;
+}
+
+.Button:hover, .activeButton {
+    transform: scale(1.1);
+    position: relative;
+    top: 5px;
+    left: 5px;
+    box-shadow: 0 0 0 0;
+}
+
+.Button p {
+    font-size: 32px;
+}

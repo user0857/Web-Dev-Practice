@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Highfive</title>
+        <link rel="stylesheet" type="text/css" href="./css/practice_day4.css">
+        <link rel="stylesheet" type="text/css" href="./css/highfive.css">
+        <script src="./js/highfive.js" async></script>
+    </head>
+    
+    <body>
+        
+        <!-- Header + description -->
+        <div>
+            <h1>
+                Highfive!
+            </h1>
+            <p>
+                In this game, there are two buttons, left and right.
+                You can highfive with whichever hand you want! Win the 
+                game by high5ing 5 times! Don't forget to reset the game 
+                once you win :))
+            </p>
+        </div>
+
+        <!-- Left/Right Buttons -->
+        <div id="inputField">
+            <button class="LeftRightButton" id="leftButton"> 
+                Left Hand
+                <img src="./img/left_hand.png" alt="Left hand img">
+            </button>
+            <button class="LeftRightButton" id="rightButton"> 
+                Right Hand
+                <img src="./img/left_hand.png" alt="Left hand img" id="rightHandImg">
+            </button>
+        </div>
+
+
+        <!-- Display Field -->
+        <div id="displayField">
+            <div id="pointTitle">
+                Points Gained: <span id="points"> 0 </span>
+            </div>
+            <div id="floatReset"></div>
+        </div>
+
+        <!-- Reset Button -->
+        <div id="resetField">
+            <button id="resetButton">
+                <img src="./img/reset.png"> <span>Reset the game</span>
+            </button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice - Day 2</title>
+
+        <!-- CSS style for tag specification-->
+        <link rel="stylesheet" type="text/css" href="./css/practice_day2.css">
+
+    </head>
+    <body>
+        <h1> Linked CSS Style Practice</h1>
+        <p> This is my self-guided practice for embedded, linked, and inline CSS style selector practice.</p>
+        <!-- Call the id selector by id="id_name"-->
+
+        <!--Cool Bricks-->
+        <div>
+            <h1> Cool Bricks </h1>
+            <div class="blue_section">
+                <!-- Call the class selector by class="class_name"-->
+                <p class="white_text_centered">
+                    <br/><br/>This is a blue brick
+                </p>
+            </div>
+    
+            <div id="red_section">
+                <p class="white_text_centered">
+                    <br/><br/>This is a blue brick
+                </p>
+            </div>
+        </div>
+
+
+        <!-- 4 Combinator Selectors-->
+        <div>
+
+            <h1> Combinator selectors</h1>
+            <div>
+                <p> There are various way to combine selectors. In this page, 4
+                    types of combinators will be presented. Additional can be accessed via 
+                    <a href="https://www.w3schools.com/css/css_combinators.asp"> this link.</a>
+                </p>
+            </div>
+            <ol>
+                <li>
+                    <h2> Descendant selector (space)</h2>
+                    <p>
+                        In this sub-section, descendant are described using space-saperated approach to
+                        choose which HTML element is effected by the selector. One thing worth noticing
+                        is that selectors can be tags, ids, or even class. For example, <span class="code_part"> .class_name tag #id {attr: val;} </span>.
+                    </p>
+                    
+                    <h3> Illustration </h3>
+                    <p> Say we would like to color the background to yellow for those nested selectors which
+                        matches to <span class="code_part">#case1 p .yellow_span</span>.
+                    </p>
+                    <div id="case1">
+                        <p><span>case1 &rarr; p &rarr; span</span> (Uncolored)</p>
+                        <p><span class="yellow_span">case1 &rarr; p &rarr; yellow_span</span> (Colored)</p>
+                    </div>
+    
+                </li>
+                <li>
+                    <h2> Child selector (&gt;)</h2>
+                    <p>
+                        Child, the first generation of the a parent, is denoted as parent &gt; child.
+                        For example, <span class="code_part"> .class_name &gt; tag &gt; #id {attr: val;} </span>.
+                    </p>
+                    
+                    <h3> Illustration </h3>
+                    <p> Say we would like to color the background to yellow for those nested selectors which
+                        matches to <span class="code_part">#case2 &gt; p &gt; .yellow_span</span>.
+                    </p>
+                    <div id="case2">
+                        <p><span>case2 &rarr; p &rarr; span</span> (Uncolored)</p>
+                        <p><span class="yellow_span">case2 &rarr; p &rarr; yellow_span</span> (Colored)</p>
+                        <p><div><span class="yellow_span">case2 &rarr; p &rarr; div &rarr; yellow_span</span> 
+                            (Uncolored since yellow_span is not p's child)</div></p>
+                    </div>
+    
+                </li>
+                <li>
+                    <h2> Adjacent Sibling selector (+)</h2>
+                    <p>
+                        Adjacent sibling selector, denoted as <span class="code_part">adj_element1 + adj_element2</span>.
+                        The adjacent selector selects elements that are horizontally(平行關係 類似於兄弟關係) directly after (a series of) specific element.
+                        For example, <span class="code_part"> .class_name + tag + #id {attr: val;} </span>.
+                    </p>
+                    
+                    <h3> Illustration </h3>
+                    <p> Say we would like to color the background to yellow for those nested selectors which
+                        matches to <span class="code_part">#case3 p + .yellow_span</span>.
+                    </p>
+                    <div id="case3">
+                        <p></p>
+                        <span>case3 &rarr; p + span</span> (Uncolored)
+                        <p></p>
+                        <span class="yellow_span">case3 &rarr; p + yellow_span</span> (Colored)
+                        <span class="yellow_span"><br><br>case3 &rarr; p + yellow_span + yellow_span</span> (Uncolored)
+                        
+                        
+                    </div>
+    
+                </li>
+                <li>
+                    <h2> General Sibling selector (~)</h2>
+                    <p>
+                        General sibling selector, denoted as <span class="code_part">adj_element1 ~ adj_element2</span>.
+                        The general selector selects ALL elements that are horizontally after (a series of) specific element (選取所有比前者小的特定元素).
+                        For example, <span class="code_part">  tag ~ #id {attr: val;} </span>.
+                    </p>
+                    
+                    <h3> Illustration </h3>
+                    <p> Say we would like to color the background to yellow for those nested selectors which
+                        matches to <span class="code_part">#case4 p ~ .yellow_span</span>.
+                    </p>
+                    <div id="case4">
+                        <p> <span>case4 &rarr; p &rarr; span</span> (Uncolored) </p>
+                        
+                        <p></p>
+                        <span class="yellow_span">case4 &rarr; p + yellow_span</span> (Colored)
+                        <span class="yellow_span"><br><br>case4 &rarr; p + yellow_span + yellow_span</span> (Colored since this is also a general sibling)
+                        
+                        
+                    </div>
+    
+                </li>
+            </ol>
+
+        </div>
+
+        <!-- Embedded/Inline Version of The Same Work-->
+        <h1> Embedded/Inline CSS Style Practice</h1>
+        <a href="./practice_day2_embedded_css.html" target="_blank">
+            <button class="blue_section">
+                <div class="white_text_centered">Embedded Version</div> <img src="./img/click_me_icon.png">
+            </button>
+        </a>
+
+        
+
+        
+
+    </body>
+</html>

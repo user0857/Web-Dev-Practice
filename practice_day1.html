@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice - Day 1</title>
+    </head>
+
+    <body>
+
+        <!--Image-->
+        <div>
+            <h1> The London View </h1>
+            <img src="./img/image.jpg">
+
+        </div>
+
+        <!-- Hyperlinks -->
+        <div>
+            <h1> Hyperlinks </h1>
+            <!-- Hyperlink Tag -->
+            <div>
+                <!-- Outer website - Transfer to another new page -->
+                <a href="https://www.google.com/"> Bring me to google</a>
+            </div>
+            <div>
+                <!-- Local website - Transfer to another new page -->
+                <a href="hello_world.html"> Bring me to local page(self transfer)</a>
+            </div>
+            <div>
+                <!-- Local website - Open a new page and transfer to another new page -->
+                <a href="hello_world.html" target="_blank"> Bring me to local page(new tab)</a>
+            </div>
+            <div>
+                <!-- Local website - click image - Open a new page and transfer to another new page -->
+                <a href="hello_world.html" target="_blank"> <img src="./img/icon.png"></a>
+            </div>
+            <div>
+                <!-- Local image - Open a new page and load the image -->
+                <a href="./img/image.jpg" target="_blank"> Load image</a>
+            </div>
+        </div>
+
+        <!-- Ordered/Unordered List (ul/ol)-->
+        <div>
+            <h1> Ordered/Unordered List </h1>
+            <a target="_blank" href="list_practice.html"> Star Gallery </a>
+        </div>
+
+        <!-- Input Types -->
+        <div>
+            <h1>Input Types</h1>
+            <p> 
+                There are various types in input tag. I'm going to demonstrate few of them
+                in this practice.
+            </p>
+            <h2>User Login Example</h2>
+            <!--Visible Input-->
+            <div>
+                Username: <input type="text">
+            </div>
+            <!--Invisible Input-->
+            <div>
+                Password: <input type="password">
+            </div>
+            <!-- Checkbox-->
+            <div>
+                <h2> Checkbox</h2>
+                Remember my account <input type="checkbox">
+            </div>
+            <!--Single selected input-->
+            <div>
+                <h2>Radio button (can not be unclicked)</h2>
+                <input type="radio"> Click the button to acknowledge the terms and condition 
+            </div>
+
+            <div>
+                <h2> Date Input </h2>
+                Date of birth: <input type="date"> <input type="button" value="Enter">
+            </div>
+
+            <div>
+                <h2> &lt;input&gt; and &lt;button&gt; buttons </h2>
+                <div> 
+                    <h3> &emsp;&lt;input&gt;: </h3> 
+                    &emsp;&emsp;It only accepts text as value. It's something like this <input type="button" value="Click Me!"> 
+                </div>
+                <div> 
+                    <h3> &emsp;&lt;button&gt;: </h3> 
+                    &emsp;&emsp;On the other hand, can insert images or even html tags in it. For instance:
+                    <button>Click Me <img src="./img/click_me_icon.png" width="20" height="20"></button>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,23 @@
+/* example of id selector: #id {attr: value;} */
+#red_section {width: 100px; height: 100px;background: red;}
+
+/* example of class selector: .class {attr: value;} */
+.blue_section {width: 100px; height: 100px;background: blue;}
+.white_text_centered {color: white; text-align: center;}
+.code_part {background-color:  rgb(207, 207, 207);}
+
+/* example of group selector: tag_1, tag_2... {attr: value;} */
+h1, h2, h3 {display:block; color:rgb(136, 30, 235); font: bold;}
+
+/* CSS Combinator selectors */
+/* 1: Descendant selector(space)*/
+#case1 p .yellow_span {background: yellow;}
+
+/* 2: child selector(>)*/
+#case2 > p > .yellow_span {background: yellow;}
+
+/* 3: adjacent sibling selector(>)*/
+#case3 p + .yellow_span {background: yellow;}
+
+/* 4: general sibling selector(>)*/
+#case4 p ~ .yellow_span {background: yellow;}

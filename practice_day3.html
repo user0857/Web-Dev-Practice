@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Practice - Day 3 </title>
+        <!-- Import previous stylesheets...-->
+        <link rel="stylesheet" type="text/css" href="./css/practice_day2.css">
+        <link rel="stylesheet" type="text/css" href="./css/practice_day3.css">
+        
+    </head>
+    <body>
+        <h1> CSS Practice</h1>
+
+        <!-- float operation -->
+        <div>
+            <h1> Element Arrangment Practice </h1>
+            <p> By default, element in HTML is arranged vertically with top-down fashion. However,
+                if we would like the element being arranged otherwise, 
+                <span class="code_part"><code> float: none/left/right/initial/inherit </code></span> should be 
+                added to the style container. Notice that <span class="code_part"><code>float</code></span> controls
+                whether an element should float after setting a value to it. To initialize the float,
+                use <span class="code_part"><code> clear: both</code></span> to push element below left and right
+                floated elements.
+            </p>
+            <ol id="first_ol">
+                <li >
+                    <h2> None (Top-down)</h2>
+                    <div class="red_section1"> <p> <br> <br> 1 </p> </div>
+                    <div class="blue_section1"> <p> <br> <br> 2 </p> </div>
+                    <div class="red_section1"> <p> <br> <br> 3 </p> </div>
+                    <div class="blue_section1"> <p> <br> <br> 4 </p> </div>
+                    <br class="init_float"/>
+                </li>
+
+                <li>
+                    <h2> Left (Left to Right)</h2>
+                    <div class="red_section2"> <p> <br> <br> 1 </p> </div>
+                    <div class="blue_section2"> <p> <br> <br> 2 </p> </div>
+                    <div class="red_section2"> <p> <br> <br> 3 </p> </div>
+                    <div class="blue_section2"> <p> <br> <br> 4 </p> </div>
+                    <br class="init_float"/>
+                </li>
+                <li>
+                    <h2> Right (Right to Left)</h2>
+                    <div class="red_section3"> <p> <br> <br> 1 </p> </div>
+                    <div class="blue_section3"> <p> <br> <br> 2 </p> </div>
+                    <div class="red_section3"> <p> <br> <br> 3 </p> </div>
+                    <div class="blue_section3"> <p> <br> <br> 4 </p> </div>
+                    <br class="init_float"/>
+                </li>
+
+            </ol>
+
+        </div>
+
+        <!-- margin operation -->
+        <div>
+            <h1> Margin Design </h1>
+            <p> If we would like to arrange element with certain margin between each other, we can set it up in such fashion: 
+                <span class="code_part"><code>{margin: up_pixel, right_pixel, down_pixel left_pixel}</code></span>, there are other
+                ways to achieve the same funcitonality, but in short, this is the most understandable and cleverest way to set up 
+                margins from 4 direction in my opinion.
+            </p>
+
+            <h2> Illustration </h2>
+            <p> Let's say we would like 4 bricks be saperated by 30 pixels to each other, and these bricks
+                are aligned horizontally from left to right, we can add 
+                <span class="code_part"> <code> margin: 0(px), 15px, 0(px), 15px</code></span> to the style
+                container to do the job.
+            </p>
+
+            <div class="red_section4"> <p class="white_text_centered"> <br> <br> 1 </p> </div>
+            <div class="blue_section4"> <p class="white_text_centered"> <br> <br> 2 </p> </div>
+            <div class="red_section4"> <p class="white_text_centered"> <br> <br> 3 </p> </div>
+            <div class="blue_section4"> <p class="white_text_centered"> <br> <br> 4 </p> </div>
+            <br class="init_float"/>
+
+        </div>
+
+        <!-- padding operation-->
+        <div>
+            <h1> Padding Design</h1>
+            <p>In the previous section, we've shown that margin help seperating elements in 
+                certain specification. However, we haven't learned how to generate spaces INSIDE
+                an element. To achieve this, we can use 
+                <span class="code_part"><code>{padding: up_pixel, right_pixel, down_pixel left_pixel;}</code></span>
+            </p>
+            <h2> Illustration </h2>
+            <p id="padding_p"> This is a paragraph padding in the middle of the block. </p>
+        </div>
+
+        <!-- Block/Inline Element-->
+        <div>
+            <h1>Block and Inline Elements</h1>
+            <p> A <span class="bold_span">block</span> element always starts are a new line,
+            and browser will add margin on left and right side. The width (100% by default) and height can be 
+            explicitly set up. <span class="code_part"><code>&lt;p&gt;</code></span> and 
+            <span class="code_part"><code>&lt;div&gt;</code></span> are great example of
+            block elements.
+            <br>
+            On the other hand, <span class="bold_span">inline</span> element does not start on a new line and only
+            takes up minimum width necessary. Take <span class="code_part"><code>&lt;span&gt;</code></span> for instance.
+        </p>
+        </div>
+        <!-- border operation -->
+    </body>
+</html>

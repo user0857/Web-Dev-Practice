@@ -1,0 +1,20 @@
+br.init_float {clear: both;}
+.bold_span {font-weight: bold;}
+
+.red_section1 {width: 100px; height: 100px;background: red; float: none;}
+.blue_section1 {width: 100px; height: 100px;background: blue; float: none;}
+
+.red_section2 {width: 100px; height: 100px;background: red; float: left;}
+.blue_section2 {width: 100px; height: 100px;background: blue; float: left;}
+
+.red_section3 {width: 100px; height: 100px;background: red; float: right;}
+.blue_section3 {width: 100px; height: 100px;background: blue; float: right;}
+
+.red_section4 {width: 100px; height: 100px;background: red; float: left;
+               margin: 0 15px 0 15px;}
+.blue_section4 {width: 100px; height: 100px;background: blue; float: left;
+                margin: 0 15px 0 15px;}
+
+#padding_p {padding: 25px 25px 25px 25px; color: rgb(0, 0, 0);width: 300px; background: rgb(241, 139, 43);}
+
+#first_ol > li > div > p {color: white; text-align: center;}
