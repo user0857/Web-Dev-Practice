@@ -80,5 +80,5 @@ function getSunIcon(timeInfo){
     }
     
 }
-setInterval(updateTime, 1000);
+setInterval(updateTime, 100);
 setInterval(getSunIcon, 1000, getSunStatus());
