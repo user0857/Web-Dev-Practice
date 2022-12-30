@@ -2,66 +2,7 @@
 <html>
     <head>
         <title> Practice - API/JavaScript </title>
-        <style>
-            body {
-                background-image: url(./img/prac_4_bg.jpg);
-                color: hsl(200, 100%, 21%);
-                font-family: sans-serif;
-            }
-            .headerContainer {
-                position: absolute;
-                margin: 0 auto;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 150px;
-            }
-            .bodyContainerLeft{
-                position: absolute;
-                top: 150px;
-                left: 0;
-                min-width: 500px;
-                width: 70%;
-                height: 100%;
-            }
-
-            .bodyContainerRight{
-                position: absolute;
-                top: 150px;
-                left: 70%;
-                width: 30%;
-                height: 100%;
-            }
-
-            #blurredTimeContainter {
-                filter: blur(3px);
-                background-color: #ccc;
-            }
-
-            .timeContainer{
-                border-radius: 30px 10px ;
-                border: 2px solid rgba(128, 128, 128, 0.5);
-                text-align: center;
-                padding: 5px;
-            }
-
-            .timeTitle{
-                font-size: 1.5rem;
-                font-weight: bold;
-            }
-
-            .timeIcon{
-                width: 100px;
-                margin: 5px;
-            }
-
-            .timeContainer .time {
-                font-size: 1.8rem;
-                font-weight: bold;
-            }
-
-
-        </style>
+        <link rel="stylesheet" type="text/css" href="./css/practice_api.css">
         <script src="./js/practice_api.js"></script>
         <script type="module" src="./js_module/getTime.js"></script>
 
@@ -76,8 +17,54 @@
                 This is left content.
             </div>
             <div class="bodyContainerRight">
-                <div class="timeContainer" id="blurredTimeContainter">
-                    <div class="timeTitle"> Current Time </div>
+                <style>
+
+                    #introField {
+                        vertical-align: middle;
+                        text-align: center;
+                    }
+                    #introField > .introImg {
+                        height: 100px;
+                        width: 100px;
+                        border-radius: 50px;
+                        border: 2px solid rgba(128, 128, 128, 0.5);
+                        margin: 5px;
+                    }
+
+                    #introField > .introName {
+                        display: inline-block;
+                        vertical-align: top;
+                        font-weight: bold;
+                        font-size: 32px;
+                    }
+
+                    #introField > .borderLine {
+                        display: flex;
+                        height: 2px;
+                        width: 80%;
+                        padding: 0 10px;
+                        margin: 0 auto;
+                        background-color: rgba(128, 128, 128, 0.5);
+                    }
+
+                    #introField > .introText {
+                        text-align: left;
+                        margin: 5px auto;
+                        padding: 5px;
+                        font-size: 1.2rem;
+                    }
+                </style>
+                <div class="roundBorderContainer" id="introField">
+                    <img src="./img/tree_house.png" class="introImg">
+                    <p class="introName">快樂老李</p>
+                    <div class="borderLine"></div>
+                    <p class="introText"> A guy to likes to program meaningless stuff as leisure. He spends 
+                        most of his time planning but rarely accomplish anything. Perhaps this website
+                        is also another half-complete work. Who knows?
+                    </p>
+                </div>   
+                <div class="roundBorderContainer" id="blurredTimeContainter">
+                    <div class="timeTitle"> UK Current Time </div>
                     <div class="timeInfoContainer">
                         <img class="timeIcon" src="./img/sun_rise.png" data-current-icon>
                         <div class="time"> 12:35:46 </div>
