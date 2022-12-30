@@ -6,6 +6,9 @@ function updateTime(){
     let seconds = curTime.getSeconds();
     let timeField = document.querySelector(".time");
 
+    if (hours < 10){
+        hours = "0" + hours;
+    }
 
     if (minutes < 10){
         minutes = "0" + minutes;
@@ -14,7 +17,6 @@ function updateTime(){
     if (seconds < 10){
         seconds = "0" + seconds;
     }
-
 
     let time_string = hours + ":" + minutes + ":" + seconds;
     timeField.innerHTML = time_string;
@@ -33,6 +35,9 @@ function AMPMto24(time12h){
         hours = parseInt(hours, 10) + 12;
     }
 
+    if (hours < 10){
+        hours = "0" + hours;
+    }
 
     return `${hours}:${minutes}:${seconds}`;
 }
@@ -54,31 +59,38 @@ async function getSunStatus(lat=51.5073219, log=-0.1276474){
     parsedData["sunrise_end"] = AMPMto24(data["sunrise"]);
     parsedData["sunset_start"] = AMPMto24(data["sunset"]);
     parsedData["sunset_end"] = AMPMto24(data["astronomical_twilight_end"]);
-    console.log(parsedData);
+    // console.log(parsedData);
     return parsedData;
 }
 
 function getSunIcon(timeInfo){
-    const curTimeString = document.querySelector(".time").innerHTML;
-    const iconField = document.querySelector(".timeIcon");
-    if (timeInfo["sunrise_start"] < curTimeString < timeInfo["sunrise_end"]){
-        iconField.src = "./img/sun_rise.png";
-        console.log("rise");
-    } else if (timeInfo["sunrise_end"] < curTimeString < timeInfo["sunrise_end"]){
-        iconField.src = "./img/noon.png";
-        console.log("noon");
-    } else if (timeInfo["sunrise_end"] < curTimeString < timeInfo["sunrise_end"]){
-        iconField.src = "./img/sun_fall.png";
-        console.log("fall");
-    } else {
-        iconField.src = "./img/night_time.png";
-        console.log("night");
+    const resolved = Promise.resolve(timeInfo);
+    resolved.then(function(timeInfo){
+        const curTimeString = document.querySelector(".time").innerHTML;
+        const iconField = document.querySelector(".timeIcon");
+        
+        if (timeInfo["sunrise_start"] < curTimeString && curTimeString < timeInfo["sunrise_end"]){
+            iconField.src = "./img/sun_rise.png";
+            console.log("rise");
+        } else if (timeInfo["sunrise_end"] < curTimeString && curTimeString < timeInfo["sunset_start"]){
+            iconField.src = "./img/noon.png";
+            console.log("noon");
+        } else if (timeInfo["sunset_start"] < curTimeString && curTimeString < timeInfo["sunset_end"]){
+            iconField.src = "./img/sun_fall.png";
+            console.log("fall");
+        } else {
+            iconField.src = "./img/night_time.png";
+            console.log("night");
+        }
+        
+        if (document.querySelector("#blurredTimeContainter") != null){
+            document.querySelector("#blurredTimeContainter").removeAttribute('id');
+        }
     }
+
+    )
     
-    if (document.querySelector("#blurredTimeContainter") != null){
-        document.querySelector("#blurredTimeContainter").removeAttribute('id');
-    }
     
 }
 setInterval(updateTime, 100);
-setInterval(getSunIcon, 1000, getSunStatus());
+setInterval(() => getSunIcon(getSunStatus()), 1000);
