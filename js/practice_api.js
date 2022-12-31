@@ -105,6 +105,9 @@ function getSunIcon(timeInfo){
     
     
 }
+
+
+
 let lat = -500;
 let log = -500;
 let geoLocations = getGeoLocation();
