@@ -41,9 +41,22 @@ function AMPMto24(time12h){
 
     return `${hours}:${minutes}:${seconds}`;
 }
+function getGeoLocation(){
 
-async function getSunStatus(lat=51.5073219, log=-0.1276474){
+    let valid = false;
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(position => {
+            lat = position.coords.latitude;
+            log = position.coords.longitude;
+            valid = true;
+            console.log(lat + " " + log + " " + valid);
+        });
+    }
+    return [lat, log, valid];
 
+}
+
+async function getSunStatus(){
     // "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today"
     const res = await fetch("https://api.sunrise-sunset.org/json?" + new URLSearchParams({
     lat: lat,
@@ -92,5 +105,17 @@ function getSunIcon(timeInfo){
     
     
 }
+let lat = -500;
+let log = -500;
+let geoLocations = getGeoLocation();
+
+
 setInterval(updateTime, 100);
-setInterval(() => getSunIcon(getSunStatus()), 1000);
+setInterval(function() {
+    if (lat != -500 && log != -500){
+        let timestamps = getSunStatus();
+        getSunIcon(timestamps);
+    }
+}, 1000);
+
+
